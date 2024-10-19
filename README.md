@@ -20,10 +20,12 @@
    - React-Native/React/Redux snippets
    - Prettier
    - meterial icon theme
+   
+4. install watchman
 
 ## First Expo Project
 
-`expo init DoneWithIt` -> `cd DoneWidthIt`
+`npx create-expo-app --template` -> `cd DoneWidthIt`
 
 ![1](./fig/1.png)
 
@@ -62,6 +64,15 @@ const styles = StyleSheet.create({
 
 ## Running
 
+```shell
+- cd DoneWithIt
+- npm run android
+- npm run ios
+- npm run web
+```
+
+
+
 + IOS - Set up Xcode
 
   `command + D`
@@ -75,6 +86,8 @@ const styles = StyleSheet.create({
 
 
 ## Debugging
+
+https://docs.expo.dev/debugging/tools/
 
 + console.log: remember to remove it
 
