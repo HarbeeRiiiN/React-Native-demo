@@ -1,20 +1,33 @@
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { TouchableHighlight } from "react-native";
+import { TouchableHighlight, View } from "react-native";
+import { useDeviceOrientation } from "@react-native-community/hooks";
 import {
+  Dimensions,
   Button,
   StyleSheet,
   Text,
   SafeAreaView,
   Image,
   Alert,
+  useWindowDimensions,
 } from "react-native";
 
 // Section2
 
 export default function App() {
+  // console.log(useWindowDimensions());
+  const landscape = useDeviceOrientation();
+  console.log(landscape);
   return (
     <SafeAreaView style={styles.container}>
+      <View
+        style={{
+          backgroundColor: "yellow",
+          width: "100%",
+          height: landscape === "landscape" ? "100%" : "10%",
+        }}
+      ></View>
       <Text> Section 2!</Text>
     </SafeAreaView>
   );

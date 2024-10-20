@@ -100,3 +100,145 @@ https://docs.expo.dev/debugging/tools/
 + in VSCode - attach to packager -> create `launch.json`
 
   ![4](./fig/4.png)
+
+
+
+# Components & APIs
+
+(section1.js)
+
+## View
+
+> https://reactnative.dev/docs/view
+
+`SafeAreaView`
+
+
+
+## Text
+
+> https://reactnative.dev/docs/text
+
++ always wrap text in the `<Tex/> `components
+
++ Truncate 
++ numberOfLines ... 
++ onPress
+
+## Image
+
+> https://reactnative.dev/docs/images
+>
+> https://reactnative.dev/docs/image
+>
+> https://reactnative.dev/docs/image-style-props
+
+`<image source={require('')}/> `(reference)
+
++ local
++ network: 
+  + obj with uri `source={{uri = ""}}`
+  + manually specify the dimension for network image `width: xx, height:xx`
+  + props: blurRadius, fadeDuration, resizemode
+
+## Touchables @Deprecated
+
+> https://reactnative.dev/docs/touchablehighlight
+>
+> https://reactnative.dev/docs/touchableopacity
+>
+> https://reactnative.dev/docs/touchablewithoutfeedback
+
+onPress is not for `<Image>`
+
+(use short cut)
+
++ TouchableHighlight
++ TouchableOpacity
++ TouchableWithoutFeedback
++ TouchableNativeFeedback
+
+
+
+## Button
+
+> https://reactnative.dev/docs/button
+
+
+
+## Alert (API)
+
+not a component
+
+> https://reactnative.dev/docs/alert
+
+
+
+## StyleSheet (API)
+
+:question: Note: why `StyleSheet.create({container:{obj}})` (vs `const xxx = {{obj}}`)
+
+​	- Prevent mispelling props -> raise error
+
+
+
+## Platform
+
+to solve: 
+
+​	switch(platfrom):
+
+​		case Android: xxx
+
+​		case IOS: xxx
+
+Sol:
+
+```javascript
+paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 
+```
+
+
+
+---
+
+(section2.js)
+
+## Demension
+
+**density-independent pixels**
+
+​	physical pixels = DIPs ✖️ Scale Factor
+
+![5](./fig/5.png)
+
+width: 200 / width: "50%"
+
+use `Dimemsions` module
+
+
+
+# Hooks
+
+> https://legacy.reactjs.org/docs/hooks-intro.html
+>
+> https://github.com/react-native-community/hooks
+
+## Detecting Orientation CHanges
+
+`"orientation": "portrait" -> "default"`
+
+1. `useWindowDimensions` 
+
+2. `useDeviceOrientation`
+
+   `const landscape = useDeviceOrientation();`
+
+   `height: landscape === "landscape" ? "100%" : "10%",`
+
+
+
+
+
+# FlexBox
+
